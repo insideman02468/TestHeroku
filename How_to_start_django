@@ -1,0 +1,52 @@
+https://qiita.com/aqyabe/items/f7f442dc4012ec67a0ec
+
+install docker-compose
+
+$ sudo -i
+# curl -L "https://github.com/docker/compose/releases/download/1.12.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# chmod +x /usr/local/bin/docker-compose
+# exit
+$ sudo docker-compose -v
+docker-compose version 1.12.0, build b31ff33
+
+
+Docker起動
+sudo docker-compose run [compose.yml_service like djangogirls] django-admin.py startproject mysite .
+
+3.サービスのビルドを行う
+sudo docker-compose build
+
+4.Dockerコンテナを起動
+sudo docker-compose up
+
+5.コンテナ起動後、別端末でコンテナのシェル起動
+docker exec -i -t djangogirls_djangogirls_1 bash
+
+Djangoモデルを作成する
+
+If you are running Docker on Linux, the files django-admin created are owned by root.
+This happens because the container runs as the root user. Change the ownership of the new files.
+
+sudo chown -R $USER:$USER .
+
+docker images
+docker rmi $(docker images)
+
+起動中のコンテナ停止
+docker stop $(docker ps -q)
+コンテナ全て削除
+docker rm $(docker ps -q -a)
+docker rmi $(docker images)
+
+停止しているコンテナをすべて削除する
+docker container prune
+
+使われていないボリュームをすべて削除する
+docker volume prune
+
+タグがついていないイメージをすべて削除する
+docker rmi $(docker images -f 'dangling=true' -q)
+
+コンテナが使っていないイメージをすべて削除する
+docker image prune
