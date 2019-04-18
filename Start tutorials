@@ -18,3 +18,15 @@ sudo docker-compose build
 sudo chown -R $USER:$USER .
 
 sudo docker-compose run [compose.yml_service like djangogirls] django-admin.py startproject mysite .
+
+heroku create
+
+git push heroku master
+
+heroku ps:scale web=1
+
+heroku open
+
+heroku run python manage.py migrate
+
+heroku run pyrhon manage.py createsuperuser
