@@ -25,6 +25,7 @@
           <td>
             <a href="{% url 'book:book_mod' book_id=book.id %}" class="btn btn-outline-primary btn-sm">修正</a>
             <a href="{% url 'book:book_del' book_id=book.id %}" class="btn btn-outline-danger btn-sm">削除</a>
+            <a href="{% url 'book:impression_list' book_id=book.id %}" class="btn btn-outline-info btn-sm">補足の一覧</a>
           </td>
         </tr>
         {% endfor %}
