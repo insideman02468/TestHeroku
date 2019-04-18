@@ -1,0 +1,19 @@
+https://qiita.com/aqyabe/items/f7f442dc4012ec67a0ec
+
+install docker-compose
+
+$ sudo -i
+# curl -L "https://github.com/docker/compose/releases/download/1.12.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# chmod +x /usr/local/bin/docker-compose
+# exit
+$ sudo docker-compose -v
+docker-compose version 1.12.0, build b31ff33
+
+
+
+sudo docker-compose build
+
+sudo chown -R $USER:$USER .
+
+sudo docker-compose run [compose.yml_service like djangogirls] django-admin.py startproject mysite .
