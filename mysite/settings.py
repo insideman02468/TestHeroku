@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'blog',
 ]
 
-##### I add 'whitenoise.middleware.WhiteNoiseMiddleware',change 'django.middleware.csrf.CsrfViewMiddleware',
+##### I added 'whitenoise.middleware.WhiteNoiseMiddleware',change 'django.middleware.csrf.CsrfViewMiddleware',
 MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -55,6 +55,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
 
 ROOT_URLCONF = 'mysite.urls'
 
