@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/TestHeroku.git
 git status
 git checkout master
 git add --all
-git commit -m "test2 update2"
+git commit -m "modified Procfile"
 git push origin master

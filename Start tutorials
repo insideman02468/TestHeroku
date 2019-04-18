@@ -10,7 +10,8 @@ $ sudo -i
 $ sudo docker-compose -v
 docker-compose version 1.12.0, build b31ff33
 
-
+###Procfile
+[mysite].wsgi
 
 sudo docker-compose build
 
