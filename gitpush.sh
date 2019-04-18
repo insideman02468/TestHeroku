@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/TestHeroku.git
 git status
 git checkout book
 git add --all
-git commit -m "Add django-bootstrap4"
+git commit -m "Finish Django nyumon(4)"
 git push origin book

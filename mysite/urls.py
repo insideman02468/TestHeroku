@@ -24,5 +24,5 @@ urlpatterns = [
     path('accounts/login/', views.LoginView.as_view(), name='login'),
     path('accounts/logout/', views.LogoutView.as_view(next_page='blog'), name='logout'),
     path('', include('blog.urls')),
-    #path('book/', include('book.urls')),
+    path('book/', include('book.urls')),   # ←ここを追加
 ]
