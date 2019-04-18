@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/TestHeroku.git
 git status
 git checkout djangogirls
 git add --all
-git commit -m "start djangogirls"
+git commit -m "start djangogirls2"
 git push origin djangogirls
