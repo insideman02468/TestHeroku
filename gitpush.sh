@@ -7,4 +7,4 @@ git status
 git checkout book
 git add --all
 git commit -m "Make book admin"
-git push origin boook
+git push origin book
