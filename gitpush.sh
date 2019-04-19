@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/TestHeroku.git
 git status
 git checkout book2
 git add --all
-git commit -m "Finish Book Manager"
+git commit -m "Change CSS from master"
 git push origin book2
