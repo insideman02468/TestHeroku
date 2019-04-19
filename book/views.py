@@ -5,6 +5,7 @@ from book.models import Book, Impression
 from book.forms import BookForm, ImpressionForm
 
 from django.views.generic.list import ListView
+from django.contrib.auth.decorators import login_required
 
 def book_list(request):
     """書籍の一覧"""
@@ -14,6 +15,7 @@ def book_list(request):
                   'book/book_list.html',     # 使用するテンプレート
                   {'books': books})         # テンプレートに渡すデータ
 
+@login_required
 def book_edit(request, book_id=None):
     """書籍の編集"""
 #     return HttpResponse('書籍の編集')
@@ -33,13 +35,14 @@ def book_edit(request, book_id=None):
 
     return render(request, 'book/book_edit.html', dict(form=form, book_id=book_id))
 
-
+@login_required
 def book_del(request, book_id):
     """書籍の削除"""
 #     return HttpResponse('書籍の削除')
     book = get_object_or_404(Book, pk=book_id)
     book.delete()
     return redirect('book:book_list')
+
 
 class ImpressionList(ListView):
     """感想の一覧"""
@@ -55,6 +58,7 @@ class ImpressionList(ListView):
         context = self.get_context_data(object_list=self.object_list, book=book)
         return self.render_to_response(context)
 
+@login_required
 def impression_edit(request, book_id, impression_id=None):
     """感想の編集"""
     book = get_object_or_404(Book, pk=book_id)  # 親の書籍を読む
@@ -77,6 +81,7 @@ def impression_edit(request, book_id, impression_id=None):
                   'book/impression_edit.html',
                   dict(form=form, book_id=book_id, impression_id=impression_id))
 
+@login_required
 def impression_del(request, book_id, impression_id):
     """感想の削除"""
     impression = get_object_or_404(Impression, pk=impression_id)
