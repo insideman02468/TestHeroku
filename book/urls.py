@@ -25,4 +25,6 @@ urlpatterns = [
     path('impression/add/<int:book_id>/', views.impression_edit, name='impression_add'),        # 登録
     path('impression/mod/<int:book_id>/<int:impression_id>/', views.impression_edit, name='impression_mod'),  # 修正
     path('impression/del/<int:book_id>/<int:impression_id>/', views.impression_del, name='impression_del'),   # 削除
+    ###For API ###
+    path('api/', views.book_api, name='book_api'),
 ]

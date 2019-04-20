@@ -8,8 +8,6 @@ from django.contrib.auth.decorators import login_required
 ###For RestAPI########
 import django_filters
 from rest_framework import viewsets, filters
-
-from .models import Post, Comment
 from .serializer import PostSerializer, CommentSerializer
 
 class PostViewSet(viewsets.ModelViewSet):
@@ -25,6 +23,8 @@ class CommentViewSet(viewsets.ModelViewSet):
     ####for django_filters
     filter_fields = ('author',  'created_date')
 
+def api(request):
+    return render(request, 'api')
 #######################
 
 def post_list(request):
