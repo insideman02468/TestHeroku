@@ -7,6 +7,25 @@ from book.forms import BookForm, ImpressionForm
 from django.views.generic.list import ListView
 from django.contrib.auth.decorators import login_required
 
+#### For RESTful API ####
+import django_filters
+from rest_framework import viewsets, filters
+
+from .serializer import BookSerializer, ImpressionSerializer
+
+
+class BookViewSet(viewsets.ModelViewSet):
+    queryset = Book.objects.all()
+    serializer_class = BookSerializer
+    filter_fields = ('publisher')
+
+
+class ImpressionViewSet(viewsets.ModelViewSet):
+    queryset = Impression.objects.all()
+    serializer_class = ImpressionSerializer
+    filter_fields = ('book')
+#########################
+
 def book_list(request):
     """書籍の一覧"""
 #    return HttpResponse('書籍の一覧')

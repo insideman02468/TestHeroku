@@ -1,6 +1,18 @@
 from django.urls import path
 from book import views
 
+###For RestAPI of books ###
+
+from rest_framework import routers
+from .views import BookViewSet, ImpressionViewSet
+
+
+router = routers.DefaultRouter()
+router.register(r'books', BookViewSet)
+router.register(r'impressions', ImpressionViewSet)
+###########################
+
+
 app_name = 'book'
 urlpatterns = [
     # 書籍

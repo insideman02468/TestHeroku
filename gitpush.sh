@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/TestHeroku.git
 git status
 git checkout BookAPI
 git add --all
-git commit -m "Merge RestFilter"
+git commit -m "Realize BookAPI"
 git push origin BookAPI

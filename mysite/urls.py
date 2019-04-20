@@ -17,7 +17,8 @@ from django.urls import path, include
 from django.contrib import admin
 
 from django.contrib.auth import views
-from blog.urls import router as blog_router
+from blog.urls import router as blog_router  #For RestAPI of blog
+from book.urls import router as book_router  #For RestAPI of book
 from django.conf.urls import url
 
 
@@ -27,5 +28,6 @@ urlpatterns = [
     path('accounts/logout/', views.LogoutView.as_view(next_page='/'), name='logout'),
     path('', include('blog.urls')),
     path('book/', include('book.urls')),   # ←ここを追加
-    url(r'^api/', include(blog_router.urls)),   #For RestAPI
+    url(r'^api/', include(blog_router.urls)),   #For RestAPI of blog
+    url(r'^book/api/', include(book_router.urls)),   #For RestAPI of book
 ]
