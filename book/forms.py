@@ -12,4 +12,4 @@ class ImpressionForm(ModelForm):
     """感想のフォーム"""
     class Meta:
         model = Impression
-        fields = ('comment', )
+        fields = ('book','comment', )
