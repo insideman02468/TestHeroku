@@ -29,6 +29,9 @@ sudo docker-compose run [compose.yml_service like djangogirls] django-admin.py s
 
 heroku create
 
+git remote add heroku [URL:https://git.heroku.com/peaceful-brushlands-43956.git]
+
+
 git push heroku master
 
 heroku ps:scale web=1
