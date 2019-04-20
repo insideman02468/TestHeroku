@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'book',
     'bootstrap4',
     'rest_framework',
+    'django_filters',
 ]
 
 ##### I added 'whitenoise.middleware.WhiteNoiseMiddleware',change 'django.middleware.csrf.CsrfViewMiddleware',
@@ -142,3 +143,10 @@ LOGIN_REDIRECT_URL = '/'
 
 ##### I added
 django_heroku.settings(locals())
+
+##### For api
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 20
+}

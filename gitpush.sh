@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/TestHeroku.git
 git status
 git checkout RestFilter
 git add --all
-git commit -m "Realize RestAPI"
+git commit -m "Realize RestFilter in Blog"
 git push origin RestFilter

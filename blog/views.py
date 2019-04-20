@@ -15,11 +15,15 @@ from .serializer import PostSerializer, CommentSerializer
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    ####for django_filters
+    filter_fields = ('author', 'created_date', 'published_date')
 
 
 class CommentViewSet(viewsets.ModelViewSet):
     queryset = Comment.objects.all()
     serializer_class = CommentSerializer
+    ####for django_filters
+    filter_fields = ('author',  'created_date')
 
 #######################
 
