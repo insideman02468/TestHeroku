@@ -6,5 +6,5 @@ git remote add origin https://github.com/insideman02468/TestHeroku.git
 git status
 git checkout RestAPI
 git add --all
-git commit -m "Start RestAPI"
+git commit -m "Realize RestAPI"
 git push origin RestAPI

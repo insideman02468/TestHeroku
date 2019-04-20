@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'blog',
     'book',
     'bootstrap4',
+    'rest_framework',
 ]
 
 ##### I added 'whitenoise.middleware.WhiteNoiseMiddleware',change 'django.middleware.csrf.CsrfViewMiddleware',
