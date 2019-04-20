@@ -18,18 +18,18 @@
 
 <body>
   <div class="page-top">
-      <font size="42"><a href="/">Hooman_lab</a></font>
+      <h1><a href="/">Hooman_lab</a></h1>
   </div>
-  <div class="page-header2">
-
+  <div class="page-header1">
       {% if user.is_authenticated %}
-          <a href="{% url 'api' %}" class="btn btn-primary btn-lg">Move API</a>
-          <a href="{% url 'book:book_api' %}" class="btn btn-primary btn-lg">Move Book API</a>
-          <p class="top-menu">Hello {{ user.username }} <small>(<a href="{% url 'logout' %}">Log out</a>)</small></p>
-      {% else %}
-          <a href="{% url 'login' %}" class="top-menu"><span class="glyphicon glyphicon-lock"></span></a>
+          <h2><p aligh="right">Hello {{ user.username }}(<a href="{% url 'logout' %}">Log out</a>)</p></h2>
       {% endif %}
-
+  </div>
+  <div class="page-header1">
+      {% if user.is_authenticated %}
+          <a href="/api" class="btn btn-primary btn-lg">Move API</a>
+          <a href="/book/api" class="btn btn-primary btn-lg">Move Book API</a>
+      {% endif %}
   </div>
 
   <div class="container">

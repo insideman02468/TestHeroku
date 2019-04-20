@@ -23,8 +23,6 @@ class CommentViewSet(viewsets.ModelViewSet):
     ####for django_filters
     filter_fields = ('author',  'created_date')
 
-def api(request):
-    return render(request, 'api')
 #######################
 
 def post_list(request):

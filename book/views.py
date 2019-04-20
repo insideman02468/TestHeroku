@@ -25,8 +25,6 @@ class ImpressionViewSet(viewsets.ModelViewSet):
     serializer_class = ImpressionSerializer
     filter_fields = ('book')
 
-def book_api(request):
-    return render(request, 'book_api')
 #########################
 
 def book_list(request):
